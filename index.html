@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InfoTrust - Portal de Notícias Confiáveis</title>
+    <style>
+        /* Reset e estilo geral */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f8f9fa;
+            color: #1e2a3a;
+            line-height: 1.6;
+        }
+
+        header {
+            background: #0a2540; /* Azul escuro confiável */
+            color: #fff;
+            padding: 1.8rem 1rem;
+            text-align: center;
+            border-bottom: 6px solid #ffb703; /* Destaque em amarelo */
+        }
+
+        header h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            letter-spacing: -1px;
+        }
+
+        header h1 span {
+            color: #ffb703;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-top: 0.5rem;
+        }
+
+        main {
+            max-width: 1100px;
+            margin: 2.5rem auto;
+            padding: 0 1.5rem;
+        }
+
+        .intro {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .intro h2 {
+            font-size: 2rem;
+            color: #0a2540;
+        }
+
+        .intro p {
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0.5rem auto 0;
+            color: #3a4a5a;
+        }
+
+        .servicos {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+        }
+
+        .card {
+            background: #ffffff;
+            border-radius: 16px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+            padding: 2rem 1.8rem;
+            flex: 1 1 260px;
+            max-width: 320px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            border-top: 5px solid #0a2540;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 14px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        .card:nth-child(2) {
+            border-top-color: #d62828; /* Vermelho para o radar */
+        }
+
+        .card:nth-child(3) {
+            border-top-color: #2a9d8f; /* Verde para o resumo */
+        }
+
+        .card .icone {
+            font-size: 3rem;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.8rem;
+            color: #0a2540;
+        }
+
+        .card p {
+            color: #4a5a6a;
+            font-size: 0.98rem;
+        }
+
+        .card .tag {
+            display: inline-block;
+            margin-top: 1rem;
+            background: #eef2f6;
+            padding: 0.25rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #0a2540;
+        }
+
+        .destaque {
+            background: #eaf4ff;
+            padding: 2rem;
+            border-radius: 16px;
+            margin-top: 3rem;
+            text-align: center;
+            border: 1px solid #c5d8e8;
+        }
+
+        .destaque h3 {
+            color: #0a2540;
+            margin-bottom: 0.5rem;
+        }
+
+        .destaque input {
+            padding: 0.8rem 1.2rem;
+            width: 60%;
+            max-width: 400px;
+            border: 1px solid #b0c4d8;
+            border-radius: 30px;
+            font-size: 1rem;
+            outline: none;
+            margin-top: 0.8rem;
+        }
+
+        .destaque button {
+            padding: 0.8rem 2rem;
+            background: #0a2540;
+            color: #fff;
+            border: none;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.2s;
+            margin-left: 0.5rem;
+        }
+
+        .destaque button:hover {
+            background: #1b3a5c;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem 1rem;
+            background: #e9ecf0;
+            color: #3a4a5a;
+            margin-top: 3rem;
+            border-top: 1px solid #d0d7df;
+            font-size: 0.95rem;
+        }
+
+        footer small {
+            display: block;
+            margin-top: 0.3rem;
+            opacity: 0.7;
+        }
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 2rem;
+            }
+            .destaque input {
+                width: 80%;
+                margin-bottom: 0.8rem;
+            }
+            .destaque button {
+                width: 80%;
+                margin-left: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>📰 Info<span>Trust</span></h1>
+        <p>Informação inteligente, sem ruído e com credibilidade</p>
+    </header>
+
+    <main>
+        <div class="intro">
+            <h2>Serviços para uma informação mais segura</h2>
+            <p>Seu portal diário para combater a desinformação, economizar tempo e consumir apenas o que importa.</p>
+        </div>
+
+        <div class="servicos">
+            <!-- Serviço 1 -->
+            <div class="card">
+                <span class="icone">📰</span>
+                <h3>Curadoria de Fontes</h3>
+                <p>Feed único com as principais manchetes de veículos confiáveis, organizadas por categorias como Política, Saúde, Tecnologia e Economia.</p>
+                <span class="tag">Agregador inteligente</span>
+            </div>
+
+            <!-- Serviço 2 -->
+            <div class="card">
+                <span class="icone">✅</span>
+                <h3>Radar de Verificação</h3>
+                <p>Cole um link ou texto suspeito. Nosso sistema consulta agências de fact-checking e mostra se a notícia é verdadeira, falsa ou precisa de cuidado.</p>
+                <span class="tag">Anti-Fake News</span>
+            </div>
+
+            <!-- Serviço 3 -->
+            <div class="card">
+                <span class="icone">📬</span>
+                <h3>Resumo Diário Personalizado</h3>
+                <p>Cadastre seus temas favoritos. Todos os dias, receba um resumo com as 5 notícias mais relevantes e verificadas do dia.</p>
+                <span class="tag">Newsletter push</span>
+            </div>
+        </div>
+
+        <!-- Chamada para ação / demonstração -->
+        <div class="destaque">
+            <h3>🔍 Quer testar uma notícia agora?</h3>
+            <p>Cole o endereço de uma notícia duvidosa para simular a verificação (demonstração).</p>
+            <div>
+                <input type="text" placeholder="https://exemplo.com/noticia-suspeita" id="inputNoticia">
+                <button onclick="alert('Radar de Verificação (simulação):\n\nNotícia recebida! Em breve integraremos com APIs reais de fact-checking.')">Verificar</button>
+            </div>
+            <small style="display:block; margin-top:0.8rem;">Funcionalidade ilustrativa para o projeto.</small>
+        </div>
+    </main>
+
+    <footer>
+        <p>InfoTrust - Portal de Serviços de Notícias</p>
+        <small>Projeto da disciplina - Portal de Serviços • Combate à desinformação</small>
+    </footer>
+
+</body>
+</html>
