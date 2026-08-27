@@ -1,0 +1,38 @@
+# IDEIAS - PORTAL DE SERVIÇOS DE NOTÍCIAS
+
+## Público-alvo
+- Jovens adultos e profissionais que consomem notícias diariamente via redes sociais
+- Estudantes que precisam de fontes confiáveis para pesquisas
+- Pessoas idosas que têm dificuldade em identificar notícias falsas
+- Qualquer cidadão que deseja se informar de maneira rápida e segura
+
+## Problema escolhido
+Desinformação e sobrecarga de informações: com a grande quantidade de notícias circulando na internet, 
+o usuário comum não consegue distinguir facilmente o que é verdadeiro, o que é clickbait ou o que 
+é manipulado. Além disso, perde-se muito tempo navegando em sites duvidosos.
+
+## Serviços propostos
+1. Curadoria Inteligente de Fontes Confiáveis
+   - Agrega notícias de veículos reconhecidos (públicos e privados) em um único feed.
+   - Classifica as manchetes por categoria (Política, Economia, Saúde, Tecnologia, Esportes).
+
+2. Radar de Verificação (Fake News Checker)
+   - Ferramenta onde o usuário cola o texto ou link de uma notícia suspeita.
+   - O sistema cruza com bases de dados de agências de fact-checking (como Lupa, Aos Fatos) 
+     e exibe um selo de "Verificado", "Falso" ou "Em investigação".
+
+3. Resumo Diário Personalizado (Newsletter Push)
+   - O usuário cadastra seus temas de interesse.
+   - Todos os dias, recebe um resumo com as 5 principais notícias do dia, filtradas por relevância 
+     e credibilidade, diretamente no e-mail ou notificação no portal.
+
+## Justificativa
+- Atende a todas as faixas etárias e níveis de escolaridade.
+- Combate um problema social grave (fake news) com tecnologia acessível.
+- Oferece economia de tempo e redução da ansiedade informacional.
+
+## Tecnologias sugeridas (para desenvolvimento futuro)
+- Front‑end: HTML, CSS, JavaScript (para exibir o feed e o verificador)
+- Back‑end: Node.js ou Python (Flask) para buscar notícias via APIs (NewsAPI, etc.)
+- Integração com APIs de fact-checking (Google Fact Check Tools, agências parceiras)
+- Banco de dados para salvar preferências dos usuários (MySQL ou Firebase)
