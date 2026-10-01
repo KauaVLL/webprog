@@ -21,6 +21,21 @@
     <main>
         <section>
             <h2>Nossos serviços</h2>
+            <section class="consulta-servico">
+    <h2>Consulte um serviço</h2>
+
+    <label for="servico">Escolha um serviço:</label>
+    <select id="servico">
+        <option value="">Selecione...</option>
+        <option value="curadoria">Curadoria de Fontes</option>
+        <option value="radar">Radar de Verificação</option>
+        <option value="resumo">Resumo Diário Personalizado</option>
+    </select>
+
+    <button id="btnConsultar" type="button">Consultar orientação</button>
+
+    <p id="resultado" aria-live="polite"></p>
+</section>
             <p>Escolha uma das opções abaixo para saber mais.</p>
 
             <article>
@@ -46,5 +61,6 @@
     <footer>
         <p>Projeto acadêmico - Programação Web</p>
     </footer>
+    <script src="js/script.js" defer></script>
 </body>
 </html>
