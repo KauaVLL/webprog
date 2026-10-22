@@ -21,28 +21,39 @@ botaoConsultar.addEventListener('click', () => {
 });
 
 // ===== AULA 09 – Array de objetos =====
+// ===== AULA 09 e 11 – Array de objetos com categoria =====
 const servicos = [
     {
         nome: "Curadoria de Fontes",
-        descricao: "Feed único com as principais manchetes de veículos reconhecidos, organizadas por categorias."
+        descricao: "Feed único com as principais manchetes de veículos reconhecidos.",
+        categoria: "noticias"
     },
     {
         nome: "Radar de Verificação",
-        descricao: "Cole um link ou texto suspeito e consulte agências de fact-checking para verificar a notícia."
+        descricao: "Cole um link suspeito e consulte agências de fact-checking.",
+        categoria: "verificacao"
     },
     {
         nome: "Resumo Diário Personalizado",
-        descricao: "Receba um resumo diário com as 5 notícias mais relevantes e verificadas conforme seus temas."
+        descricao: "Receba um resumo diário com as notícias mais relevantes.",
+        categoria: "personalizacao"
     }
 ];
 
-// ===== AULA 10 – Catálogo dinâmico =====
+// ===== AULA 10 e 11 – Catálogo dinâmico com filtro =====
 const listaServicos = document.querySelector("#listaServicos");
+const filtroCategoria = document.querySelector("#filtroCategoria");
+const mensagemFiltro = document.querySelector("#mensagemFiltro");
 
-function renderizarServicos() {
+function renderizarServicos(lista) {
     listaServicos.innerHTML = "";
 
-    servicos.forEach((servico) => {
+    if (lista.length === 0) {
+        listaServicos.textContent = "Nenhum serviço foi encontrado nesta categoria.";
+        return;
+    }
+
+    lista.forEach((servico) => {
         const card = document.createElement("article");
         card.classList.add("card-servico");
 
@@ -57,4 +68,76 @@ function renderizarServicos() {
     });
 }
 
-renderizarServicos();
+// Renderiza todos os serviços ao carregar a página
+renderizarServicos(servicos);
+
+// ===== AULA 11 – Evento change do filtro =====
+filtroCategoria.addEventListener("change", () => {
+    const categoriaEscolhida = filtroCategoria.value;
+
+    if (categoriaEscolhida === "todos") {
+        renderizarServicos(servicos);
+        mensagemFiltro.textContent = "Mostrando todos os serviços.";
+    } else {
+        const servicosFiltrados = servicos.filter((servico) => {
+            return servico.categoria === categoriaEscolhida;
+        });
+
+        renderizarServicos(servicosFiltrados);
+        mensagemFiltro.textContent = servicosFiltrados.length + " serviço(s) encontrado(s).";
+    }
+    // ===== AULA 12 – Validação do Formulário =====
+const formulario = document.querySelector("#formContato");
+
+// Verifica se o formulário existe na página para não dar erro nas outras páginas
+if (formulario) {
+    const campoNome = document.querySelector("#nome");
+    const campoEmail = document.querySelector("#email");
+    const campoAssunto = document.querySelector("#assunto"); // No seu HTML o id é "assunto"
+    const mensagem = document.querySelector("#mensagemForm");
+
+    formulario.addEventListener("submit", (evento) => {
+        evento.preventDefault(); // Impede a página de recarregar
+
+        const nome = campoNome.value.trim();
+        const email = campoEmail.value.trim();
+        const assunto = campoAssunto.value;
+
+        // Validação
+        if (nome === "" || email === "" || assunto === "") {
+            mensagem.textContent = "Preencha os campos obrigatórios antes de continuar.";
+            return;
+        }
+
+        mensagem.textContent = `Obrigado, ${nome}! Sua solicitação foi registrada.`;
+        formulario.reset(); // Limpa os campos após o envio
+    });
+}
+
+// ===== AULA 13 – LocalStorage (Serviço Favorito) =====
+const campoFavorito = document.querySelector("#servicoFavorito");
+const botaoFavorito = document.querySelector("#btnSalvarFavorito");
+const mensagemFavorito = document.querySelector("#favoritoSalvo");
+
+if (campoFavorito) {
+    // Recupera o favorito ao carregar a página
+    const favoritoSalvo = localStorage.getItem("servicoFavorito");
+    if (favoritoSalvo) {
+        campoFavorito.value = favoritoSalvo;
+        mensagemFavorito.textContent = `Seu serviço favorito é: ${favoritoSalvo}`;
+    }
+
+    // Salva o favorito ao clicar no botão
+    botaoFavorito.addEventListener("click", () => {
+        const servico = campoFavorito.value;
+
+        if (servico === "") {
+            mensagemFavorito.textContent = "Escolha um serviço primeiro.";
+            return;
+        }
+
+        localStorage.setItem("servicoFavorito", servico);
+        mensagemFavorito.textContent = `Favorito salvo: ${servico}`;
+    });
+}
+});

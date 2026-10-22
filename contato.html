@@ -1,54 +1,81 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contato - InfoTrust</title>
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
     <header>
-        <h1>📰 InfoTrust</h1>
-        <p>Informação inteligente, sem ruído e com credibilidade</p>
+      <h1>📰 InfoTrust</h1>
+      <p>Informação inteligente, sem ruído e com credibilidade</p>
     </header>
 
     <nav>
-        <a href="index.html">Início</a>
-        <a href="servicos.html">Serviços</a>
-        <a href="contato.html">Contato</a>
+      <a href="index.html">Início</a>
+      <a href="servicos.html">Serviços</a>
+      <a href="contato.html">Contato</a>
     </nav>
 
     <main>
-        <section>
-            <h2>Entre em contato</h2>
-            <p>Preencha os campos abaixo. Nesta etapa, o formulário ainda não enviará os dados para um servidor, mas você já pode testar a validação do navegador.</p>
+    <!-- SEÇÃO 1: Formulário de Contato -->
+    <section>
+        <h2>Entre em contato</h2>
+        <p>
+            Preencha os campos abaixo. Nesta etapa, o formulário ainda não enviará
+            os dados para um servidor, mas você já pode testar a validação do navegador.
+        </p>
 
-            <form>
-                <label for="nome">Nome completo:</label>
-                <input type="text" id="nome" name="nome" required>
+        <!-- O formulário começa aqui -->
+        <form id="formContato">
+            <label for="nome">Nome completo:</label>
+            <input type="text" id="nome" name="nome" required />
 
-                <label for="email">E-mail:</label>
-                <input type="email" id="email" name="email" required>
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" required />
 
-                <label for="assunto">Assunto:</label>
-                <select id="assunto" name="assunto" required>
-                    <option value="">Selecione</option>
-                    <option value="duvida">Dúvida sobre os serviços</option>
-                    <option value="sugestao">Sugestão de melhoria</option>
-                    <option value="reportar">Reportar problema</option>
-                    <option value="outro">Outro</option>
-                </select>
+            <label for="assunto">Assunto:</label>
+            <select id="assunto" name="assunto" required>
+                <option value="">Selecione</option>
+                <option value="duvida">Dúvida sobre os serviços</option>
+                <option value="sugestao">Sugestão de melhoria</option>
+                <option value="reportar">Reportar problema</option>
+                <option value="outro">Outro</option>
+            </select>
 
-                <label for="mensagem">Mensagem:</label>
-                <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
+            <label for="mensagem">Mensagem:</label>
+            <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
 
-                <button type="submit">Enviar</button>
-            </form>
-        </section>
-    </main>
+            <!-- Único botão de enviar -->
+            <button type="submit">Enviar</button>
+
+            <!-- Área da mensagem do JavaScript -->
+            <p id="mensagemForm" aria-live="polite"></p>
+        </form>
+        <!-- O formulário termina aqui -->
+    </section>
+
+    <!-- SEÇÃO 2: Serviço Favorito (Aula 13) -->
+    <section class="preferencia">
+        <h2>Meu serviço favorito</h2>
+        <label for="servicoFavorito">Escolha:</label>
+        <select id="servicoFavorito">
+            <option value="">Selecione...</option>
+            <option value="curadoria">Curadoria de Fontes</option>
+            <option value="radar">Radar de Verificação</option>
+            <option value="resumo">Resumo Diário</option>
+        </select>
+        <button id="btnSalvarFavorito" type="button">Salvar favorito</button>
+        <p id="favoritoSalvo" aria-live="polite"></p>
+    </section>
+</main>
+
+<!-- Não esqueça de colocar o script antes de fechar o body, se ainda não tiver -->
+<script src="js/script.js" defer></script>
 
     <footer>
-        <p>Projeto acadêmico - Programação Web</p>
+      <p>Projeto acadêmico - Programação Web</p>
     </footer>
-</body>
+  </body>
 </html>
