@@ -18,3 +18,26 @@ botaoConsultar.addEventListener('click', () => {
         resultado.textContent = 'Serviço não identificado.';
     }
 });
+
+const servicos = [
+    {
+        nome: "Curadoria de Fontes",
+        descricao: "Feed único com as principais manchetes de veículos reconhecidos, organizadas por categorias."
+    },
+    {
+        nome: "Radar de Verificação",
+        descricao: "Cole um link ou texto suspeito e consulte agências de fact-checking para verificar a notícia."
+    },
+    {
+        nome: "Resumo Diário Personalizado",
+        descricao: "Receba um resumo diário com as 5 notícias mais relevantes e verificadas conforme seus temas."
+    }
+];
+
+console.table(servicos);
+console.log(servicos[0].nome);
+console.log(servicos[1].descricao);
+
+servicos.forEach((servico) => {
+    console.log(servico.nome);
+});
