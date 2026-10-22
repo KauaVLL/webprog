@@ -93,3 +93,16 @@ footer {
     background-color: #e9ecf0;
     margin-top: 24px;
 }
+
+.card-servico {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    background-color: #f9f9f9; /* Opcional, para destacar */
+}
+
+.card-servico h3 {
+    margin-top: 0;
+    color: #0a2540;
+}

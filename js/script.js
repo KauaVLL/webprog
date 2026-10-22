@@ -1,10 +1,11 @@
+// ===== AULA 08 – Consulta com select =====
 const campoServico = document.querySelector('#servico');
 const botaoConsultar = document.querySelector('#btnConsultar');
 const resultado = document.querySelector('#resultado');
 
 botaoConsultar.addEventListener('click', () => {
     const escolha = campoServico.value;
-    console.log(escolha); // usado só para testar no Console
+    console.log(escolha);
 
     if (escolha === '') {
         resultado.textContent = 'Escolha um serviço antes de consultar.';
@@ -19,6 +20,7 @@ botaoConsultar.addEventListener('click', () => {
     }
 });
 
+// ===== AULA 09 – Array de objetos =====
 const servicos = [
     {
         nome: "Curadoria de Fontes",
@@ -34,10 +36,25 @@ const servicos = [
     }
 ];
 
-console.table(servicos);
-console.log(servicos[0].nome);
-console.log(servicos[1].descricao);
+// ===== AULA 10 – Catálogo dinâmico =====
+const listaServicos = document.querySelector("#listaServicos");
 
-servicos.forEach((servico) => {
-    console.log(servico.nome);
-});
+function renderizarServicos() {
+    listaServicos.innerHTML = "";
+
+    servicos.forEach((servico) => {
+        const card = document.createElement("article");
+        card.classList.add("card-servico");
+
+        const titulo = document.createElement("h3");
+        titulo.textContent = servico.nome;
+
+        const descricao = document.createElement("p");
+        descricao.textContent = servico.descricao;
+
+        card.append(titulo, descricao);
+        listaServicos.appendChild(card);
+    });
+}
+
+renderizarServicos();
