@@ -1,19 +1,34 @@
-# InfoTrust - Portal de Serviços Digitais
+# InfoTrust - Portal de Serviços
 
-Projeto desenvolvido na disciplina de **Programação Web** – 1º Bimestre.
+## Sobre o projeto
+O InfoTrust é um portal focado no combate à desinformação, oferecendo curadoria de notícias confiáveis, verificação de fatos e resumos diários. O projeto foi desenvolvido durante a disciplina de Programação Web.
 
-## Tema
-Portal de notícias confiáveis, com foco no combate à desinformação e na curadoria de fontes seguras.
+## Tecnologias utilizadas
+- HTML5
+- CSS3
+- JavaScript (DOM, Arrays, LocalStorage, Fetch API)
+- Git e GitHub
+- API ViaCEP
 
-## Entrega 1 - Aulas 1 a 6
+## Funcionalidades
+- Catálogo dinâmico de serviços
+- Filtro por categoria
+- Formulário com validação JavaScript
+- Preferência de serviço salva no LocalStorage
+- Consulta de endereço por CEP usando a API do ViaCEP
 
-- ✅ HTML5 semântico (header, nav, main, section, article, footer)
-- ✅ Navegação entre 3 páginas (index, servicos, contato)
-- ✅ Listas, links e imagem com texto alternativo (alt)
-- ✅ Formulário com labels associados, campos obrigatórios (required) e validação de e-mail
-- ✅ CSS externo com estilos iniciais (Box Model, cores, espaçamentos)
-- ✅ Versionamento com Git e GitHub (commits compreensíveis)
-- ✅ README básico
+## API utilizada
+Utilizei o ViaCEP, um Web Service público e gratuito que retorna dados de endereço no formato JSON a partir de um CEP.
+
+## Como testar
+1. Abra o `index.html` no navegador.
+2. Navegue até a página de Serviços para ver o catálogo e testar o filtro.
+3. Teste a consulta de CEP preenchendo os 8 números.
+4. Vá para Contato para testar a validação do formulário e salvar um serviço favorito (atualize a página para ver a persistência).
+
+## Publicação
+Link do GitHub Pages: https://kauavll.github.io/webprog/
+
 
 ## Autor(a)
 Kauã Vitor de Lima Lampert

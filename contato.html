@@ -28,31 +28,28 @@
         </p>
 
         <!-- O formulário começa aqui -->
-        <form id="formContato">
-            <label for="nome">Nome completo:</label>
-            <input type="text" id="nome" name="nome" required />
+       <form id="formContato">
+    <label for="nome">Nome completo:</label>
+    <input type="text" id="nome" name="nome" required />
 
-            <label for="email">E-mail:</label>
-            <input type="email" id="email" name="email" required />
+    <label for="email">E-mail:</label>
+    <input type="email" id="email" name="email" required />
 
-            <label for="assunto">Assunto:</label>
-            <select id="assunto" name="assunto" required>
-                <option value="">Selecione</option>
-                <option value="duvida">Dúvida sobre os serviços</option>
-                <option value="sugestao">Sugestão de melhoria</option>
-                <option value="reportar">Reportar problema</option>
-                <option value="outro">Outro</option>
-            </select>
+    <label for="assunto">Assunto:</label>
+    <select id="assunto" name="assunto" required>
+        <option value="">Selecione</option>
+        <option value="duvida">Dúvida sobre os serviços</option>
+        <option value="sugestao">Sugestão de melhoria</option>
+        <option value="reportar">Reportar problema</option>
+        <option value="outro">Outro</option>
+    </select>
 
-            <label for="mensagem">Mensagem:</label>
-            <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
+    <label for="mensagem">Mensagem:</label>
+    <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
 
-            <!-- Único botão de enviar -->
-            <button type="submit">Enviar</button>
-
-            <!-- Área da mensagem do JavaScript -->
-            <p id="mensagemForm" aria-live="polite"></p>
-        </form>
+    <button type="submit">Enviar</button>
+    <p id="mensagemForm" aria-live="polite"></p>
+</form>
         <!-- O formulário termina aqui -->
     </section>
 

@@ -1,86 +1,99 @@
 <!doctype html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Serviços - InfoTrust</title>
-    <link rel="stylesheet" href="css/style.css" />
-  </head>
-  <body>
-    <header>
-      <h1>📰 InfoTrust</h1>
-      <p>Informação inteligente, sem ruído e com credibilidade</p>
-    </header>
 
-    <nav>
-      <a href="index.html">Início</a>
-      <a href="servicos.html">Serviços</a>
-      <a href="contato.html">Contato</a>
-    </nav>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Serviços - InfoTrust</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
 
-    <main>
-      <!-- 1ª Seção: Serviços estáticos (que já existiam) -->
-      <section>
-        <h2>Nossos serviços</h2>
-        <p>Escolha uma das opções abaixo para saber mais.</p>
+<body>
+  <header>
+    <h1>📰 InfoTrust</h1>
+    <p>Informação inteligente, sem ruído e com credibilidade</p>
+  </header>
 
-        <article>
-          <h3>📰 Curadoria de Fontes</h3>
-          <p>
-            Feed único com as principais manchetes de veículos reconhecidos...
-          </p>
-          <a href="contato.html">Solicitar acesso</a>
-        </article>
+  <nav>
+    <a href="index.html">Início</a>
+    <a href="servicos.html">Serviços</a>
+    <a href="contato.html">Contato</a>
+  </nav>
 
-        <article>
-          <h3>✅ Radar de Verificação</h3>
-          <p>Cole um link ou texto suspeito e nosso sistema consulta...</p>
-          <a href="contato.html">Testar ferramenta</a>
-        </article>
+  <main>
+    <!-- 1ª Seção: Serviços estáticos (que já existiam) -->
+    <section>
+      <h2>Nossos serviços</h2>
+      <p>Escolha uma das opções abaixo para saber mais.</p>
 
-        <article>
-          <h3>📬 Resumo Diário Personalizado</h3>
-          <p>Cadastre seus temas favoritos e receba todos os dias...</p>
-          <a href="contato.html">Assinar newsletter</a>
-        </article>
-      </section>
+      <article>
+        <h3>📰 Curadoria de Fontes</h3>
+        <p>
+          Feed único com as principais manchetes de veículos reconhecidos...
+        </p>
+        <a href="contato.html">Solicitar acesso</a>
+      </article>
 
-      <!-- 2ª Seção: Consulta (Aula 08) -->
-      <section class="consulta-servico">
-        <h2>Consulte um serviço</h2>
+      <article>
+        <h3>✅ Radar de Verificação</h3>
+        <p>Cole um link ou texto suspeito e nosso sistema consulta...</p>
+        <a href="contato.html">Testar ferramenta</a>
+      </article>
 
-        <label for="servico">Escolha um serviço:</label>
-        <select id="servico">
-          <option value="">Selecione...</option>
-          <option value="curadoria">Curadoria de Fontes</option>
-          <option value="radar">Radar de Verificação</option>
-          <option value="resumo">Resumo Diário Personalizado</option>
-        </select>
+      <article>
+        <h3>📬 Resumo Diário Personalizado</h3>
+        <p>Cadastre seus temas favoritos e receba todos os dias...</p>
+        <a href="contato.html">Assinar newsletter</a>
+      </article>
+    </section>
 
-        <button id="btnConsultar" type="button">Consultar orientação</button>
-        <p id="resultado" aria-live="polite"></p>
-      </section>
+    <!-- 2ª Seção: Consulta (Aula 08) -->
+    <section class="consulta-servico">
+      <h2>Consulte um serviço</h2>
 
-      <!-- 3ª Seção: Catálogo Dinâmico (Aula 10) -->
-      <section>
-        <h2>Catálogo de serviços</h2>
+      <label for="servico">Escolha um serviço:</label>
+      <select id="servico">
+        <option value="">Selecione...</option>
+        <option value="curadoria">Curadoria de Fontes</option>
+        <option value="radar">Radar de Verificação</option>
+        <option value="resumo">Resumo Diário Personalizado</option>
+      </select>
 
-        <label for="filtroCategoria">Filtrar serviços por categoria:</label>
-        <select id="filtroCategoria">
-          <option value="todos">Todos os serviços</option>
-          <option value="noticias">Curadoria de Notícias</option>
-          <option value="verificacao">Verificação</option>
-          <option value="personalizacao">Personalização</option>
-        </select>
+      <button id="btnConsultar" type="button">Consultar orientação</button>
+      <p id="resultado" aria-live="polite"></p>
+    </section>
 
-        <p id="mensagemFiltro" aria-live="polite"></p>
-        <div id="listaServicos"></div>
-      </section>
-    </main>
+    <!-- 3ª Seção: Catálogo Dinâmico (Aula 10) -->
+    <section>
+      <h2>Catálogo de serviços</h2>
 
-    <footer>
-      <p>Projeto acadêmico - Programação Web</p>
-    </footer>
-    <script src="js/script.js" defer></script>
-  </body>
+      <label for="filtroCategoria">Filtrar serviços por categoria:</label>
+      <select id="filtroCategoria">
+        <option value="todos">Todos os serviços</option>
+        <option value="noticias">Curadoria de Notícias</option>
+        <option value="verificacao">Verificação</option>
+        <option value="personalizacao">Personalização</option>
+      </select>
+
+      <p id="mensagemFiltro" aria-live="polite"></p>
+      <div id="listaServicos"></div>
+    </section>
+    <section class="consulta-cep">
+      <h2>Consulta de endereço por CEP</h2>
+      <p>Digite um CEP brasileiro com 8 números.</p>
+      <label for="cep">CEP:</label>
+      <input id="cep" type="text" inputmode="numeric" maxlength="9" placeholder="00000-000">
+      <button id="btnBuscarCep" type="button">Buscar endereço</button>
+      <p id="statusCep" aria-live="polite"></p>
+      <div id="resultadoCep"></div>
+    </section>
+  </main>
+  <footer>
+    <p>Projeto acadêmico - Programação Web</p>
+  </footer>
+  <script src="js/script.js" defer></script>
+  <script src="js/script.js" defer></script>
+  <script src="js/cep.js" defer></script> <!-- Nova linha -->
+</body>
+
 </html>
